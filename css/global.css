@@ -4,6 +4,10 @@ h1 {
     font-family: "Concert One", sans-serif;
 }
 
+.hidden{
+    display: none !important;
+}
+
 * {
     margin: 0;
     padding: 0;

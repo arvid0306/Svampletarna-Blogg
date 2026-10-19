@@ -1,0 +1,19 @@
+#inloggning-form{
+    gap: 1rem;                                          /*lägger till ett gap mellan elementen inuti på 1 rem*/
+    display: flex;                                      /*skapar flex*/
+    flex-direction: column;                             /*ändrar riktingen från row till column*/
+    align-items: center;                                /*centrerar innehållet vågrätt*/
+    padding: 5%;                                        /*lägger till 5% padding*/
+    border-radius: 1rem;                                /*rundar kanterna*/
+}
+
+#inloggning{
+    display: flex;
+    flex-direction: column;
+}
+
+#inloggning > img{
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+}

@@ -2,7 +2,7 @@ let mushroomsJSON = fetch("./json/svampar.json")
     .then(r => r.json());
 
 
-async function init() {
+async function initIndex() {
     mushroomsJSON = await mushroomsJSON;
     let mushrooms = mushroomsJSON.svampar;
 
@@ -37,4 +37,4 @@ async function init() {
     })
 }
 
-window.onload = init;
+window.addEventListener("load", initIndex);
