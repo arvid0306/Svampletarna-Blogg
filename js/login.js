@@ -28,17 +28,16 @@ function initLogIn(){
 
     logInDiv = document.getElementById("inloggning");
 
+    form = document.getElementById("inloggning-form");
+    form.addEventListener("submit", e=>{
+        e.preventDefault();
+        logInCheck();
+    })
 
     const btnLogOut = document.getElementById("btn-log-out");
     btnLogOut.addEventListener("click", e=>{
         e.preventDefault();
         logOutFunction();
-    })
-
-    form = document.getElementById("inloggning-form");
-    form.addEventListener("submit", e=>{
-        e.preventDefault();
-        logInCheck();
     })
 
     if(userLoggedIn === userKalle){
@@ -79,9 +78,6 @@ function logInFunction(){
     return;
 }
 
-// Synliggör formuläret och döljer loffa ut-knappen
-// Tar bort namnet ur localStorage så att användaren inte loggas in automatisk igen när sidan uppdateras
-// Tömmer p-taggarna för meddelande och ersätter med en tom sträng
 function logOutFunction(){
     logInDiv.classList.remove("hidden");
 
