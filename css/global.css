@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
+.hidden{
+    display: none !important;
+}
+
 h1 {
     font-family: "Concert One", sans-serif;
 }

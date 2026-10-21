@@ -1,0 +1,7 @@
+.hero {
+    --hero-bild: url("../img/blogg-bakgrund.jpg");
+}
+
+.hidden-post-template{
+    display: none !important;
+}

@@ -31,14 +31,6 @@ function init(){
     info = document.getElementById("info-log-in");
     infoForm = document.getElementById("info-log-in-form");
 
-    const btnLogOut = document.getElementById("btn-log-out");
-    logOut = btnLogOut;
-    logOut.hidden = true;
-    btnLogOut.addEventListener("click", e=>{
-        e.preventDefault();
-        logOutFunction();
-    })
-
     const formLogIn = document.getElementById("inloggning-form");
     form = formLogIn;
     formLogIn.addEventListener("submit", e=>{
@@ -77,31 +69,10 @@ function logInCheck(){
     }
 }
 
-// Döljer formuläret och synliggör logga ut-knappen
-// Lagrar namnet i localStorage så att användaren senare inte behöver fylla i inloggningsuppgifter varje gång sidan uppdateras
-// Skriver ut ett meddelande i p-taggen för meddelande
 function logInFunction(){
-    form.hidden = true;
-    logOut.hidden = false;
-
     localStorage.setItem("user", user.value);
 
-    info.textContent = `Välkommen ${user.value}, du är nu inloggad!`;
-
-    return;
-}
-
-// Synliggör formuläret och döljer loffa ut-knappen
-// Tar bort namnet ur localStorage så att användaren inte loggas in automatisk igen när sidan uppdateras
-// Tömmer p-taggarna för meddelande och ersätter med en tom sträng
-function logOutFunction(){
-    form.hidden = false;
-    logOut.hidden = true;
-
-    localStorage.removeItem("user");
-
-    info.textContent = "";
-    infoForm.textContent = "";
+    window.location.href = "index.html";
 
     return;
 }
