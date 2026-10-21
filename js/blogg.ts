@@ -1,13 +1,13 @@
 type BlogComment ={
     comment: string;
-    date: string;
     user: string;
+    date: string;
 }
 
 type BlogPost = {
     titel: string;
-    user: string;
     content: string;
+    user: string;
     date: string;
     comments: BlogComment[];
     id: string;
@@ -30,8 +30,8 @@ function initBlog(){
         formBlogPosts?.addEventListener("submit", e =>{
             e.preventDefault();
 
-            const titel = (document.getElementById("post-caption") as HTMLInputElement).value;
-            const content = (document.getElementById("post-content") as HTMLInputElement).value;
+            const titel = (document.getElementById("post-caption") as HTMLTextAreaElement).value;
+            const content = (document.getElementById("post-content") as HTMLTextAreaElement).value;
             const now = new Date();
             const date = now.toLocaleDateString("sv-SE");
             const id = crypto.randomUUID();
@@ -44,8 +44,8 @@ function initBlog(){
 
             const newBlogPost: BlogPost = {
                 titel: titel,
-                user: userLoggedInBlog,
                 content: content,
+                user: userLoggedInBlog,
                 date: date,
                 comments: [],
                 id: id
@@ -78,8 +78,8 @@ function createBlogPost(blogPost: BlogPost){
     let children = blogEl.children[0].children;
 
     children[0].textContent = blogPost.titel;
-    children[1].textContent = blogPost.user;
-    children[2].textContent = blogPost.content;
+    children[1].textContent = blogPost.content;
+    children[2].textContent = blogPost.user;
     children[3].textContent = blogPost.date;
     blogEl.dataset.id = blogPost.id;
 
@@ -94,7 +94,7 @@ function createBlogPost(blogPost: BlogPost){
         return;
     }
 
-    const commentInput = formBlogComments.querySelector<HTMLInputElement>("#post-comment");
+    const commentInput = formBlogComments.querySelector<HTMLTextAreaElement>("#post-comment");
     
     if(commentInput === null){
         return;
@@ -129,8 +129,8 @@ function createBlogPost(blogPost: BlogPost){
 
             const newBlogComment: BlogComment = {
                 comment: content,
-                date: date,
-                user: userLoggedInBlog
+                user: userLoggedInBlog,
+                date: date
             }
 
             blogPost.comments.push(newBlogComment);
@@ -152,8 +152,8 @@ function createBlogComment(blogComment: BlogComment, commentList: HTMLUListEleme
     let children = commentEl.children[0].children;
 
     children[0].textContent = blogComment.comment;
-    children[1].textContent = blogComment.date;
-    children[2].textContent = blogComment.user;
+    children[1].textContent = blogComment.user;
+    children[2].textContent = blogComment.date;
 
     commentList.prepend(commentEl);
 }

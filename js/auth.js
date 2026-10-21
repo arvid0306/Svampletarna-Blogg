@@ -9,6 +9,9 @@ if(userLoggedIn === "Kalle"){
     hidden.forEach(e =>{
         e.classList.remove("hidden");
     })
+
+    const logInMessage = document.getElementById("log-in-message");
+    logInMessage.classList.add("hidden");
 }
 
 logInOutBtn.addEventListener("click", e =>{

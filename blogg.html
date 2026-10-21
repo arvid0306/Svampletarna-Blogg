@@ -30,28 +30,32 @@
         </div>
     </header>
     <main>
-        <div class="hidden">
+        <div id="newPost" class="hidden">
             <h2>Skapa nytt inlägg</h2>
             <form id="blog-form">
                 <label for="post-caption">Rubrik</label>
-                <input type="text" name="post-caption" id="post-caption">
-                <label for="post-text">Text</label>
-                <input type="text" name="post-content" id="post-content">
+                <textarea name="post-caption" id="post-caption" rows="1"></textarea>
+                <label for="post-content">Text</label>
+                <textarea name="post-content" id="post-content" rows="1"></textarea>
                 <button type="submit">Publicera inlägg</button>
             </form>
+        </div>
+        <div id="log-in-message">
+            <h3>Logga in för att publicera inlägg och kommentera</h3>
+            <a href="login.html" id="log-in-link">Logga in</a>
         </div>
         <section id="blog-posts">
             <ul id="post-ul">
                 <li id="placeholder-posts" class="hidden-post-template">
                     <article>
                         <h3>Titel</h3>
-                        <h4>User</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu arcu, finibus consectetur pharetra eu, consectetur eu lacus. Maecenas malesuada nisi et iaculis varius. Quisque ut rhoncus est, vitae suscipit mauris. Nunc justo justo, imperdiet tincidunt turpis quis, iaculis pulvinar diam. Duis euismod finibus ligula at porta. Proin eu leo sit amet nisi semper sollicitudin a at est. Proin sem ante, pulvinar sit amet laoreet at, scelerisque ut sapien. In hac habitasse platea dictumst. Sed auctor sem a lacus euismod condimentum. Donec eu leo neque. Quisque rhoncus sit amet enim ut varius. Integer placerat lorem sit amet lectus egestas, sit amet lobortis ligula dapibus. Vivamus fermentum velit in dolor bibendum pharetra. Sed eget consectetur dui. Integer nisi ligula, vehicula vel tempus eget, molestie eget arcu. Sed accumsan tristique pulvinar. Aenean dignissim vitae dolor nec ullamcorper. Nulla consequat dui quis est bibendum vehicula. Integer dui diam, porta eget finibus elementum, accumsan ac turpis. Integer dictum porta mi in lacinia. Phasellus hendrerit efficitur diam, id ultricies dolor egestas sed. Pellentesque bibendum laoreet sapien, nec convallis purus sodales ac. Nam pulvinar dui quis diam tempus euismod. Nullam tortor neque, pretium id dictum id, laoreet et lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras vestibulum ante et nibh consequat, venenatis ornare dolor vehicula. Maecenas non mauris fermentum, tempor lacus eget, laoreet lorem. Ut consequat condimentum mi, sit amet commodo lacus vestibulum eu. Praesent eget vestibulum libero. Donec et fermentum nulla. Mauris pulvinar ornare vehicula. Phasellus vel tellus et dui malesuada porta ac quis tellus.</p>
+                        <h4>User</h4>
                         <p>20/10-2026</p>
                         <div id="blog-post-publish-comment" class="hidden">
                             <form id="comment-form">
                                 <label for="post-comment"></label>
-                                <input type="text" name="post-comment" id="post-comment">
+                                <textarea name="post-comment" id="post-comment" rows="1"></textarea>
                                 <button type="submit" id="comment-publish">Publicera kommentar</button>
                             </form>
                         </div>
@@ -60,8 +64,8 @@
                                 <li id="placeholder-comments" class="hidden-post-template">
                                     <article>
                                         <p>Comment</p>
-                                        <p>20/10-2026</p>
                                         <p>User</p>
+                                        <p>20/10-2026</p>
                                     </article>
                                 </li>
                             </ul>
@@ -73,7 +77,7 @@
         </section>
     </main>
     <footer>
-
+        Skapad av Arvid Johansson WU26
     </footer>
 </body>
 </html>

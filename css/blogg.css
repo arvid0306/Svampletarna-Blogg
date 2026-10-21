@@ -2,6 +2,65 @@
     --hero-bild: url("../img/blogg-bakgrund.jpg");
 }
 
+li{
+    list-style-type: none ;
+}
+
 .hidden-post-template{
     display: none !important;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+#log-in-message{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5% 20px;
+}
+
+#newPost{
+    padding: 10px 3%;
+}
+
+#blog-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#blog-form textarea{
+    field-sizing: content;
+    max-height: 15rem;
+    resize: none;
+    font-size: 1rem;
+}
+
+#blog-form #post-caption{
+    width: 50%;
+    min-height: 2rem;
+}
+
+#blog-form #post-content{
+    min-height: 4rem;
+}
+
+#log-in-link{
+    display: block;
+    border-radius: 8px;
+    border: 2px solid #dddbd3;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding: 16px 5%;
+    background-color: white;
+    align-self: center;
+}
+
+#post-ul li{
+    padding: 16px;
+}
+#post-ul p{
+    color: black;
+    font-style: normal;
 }

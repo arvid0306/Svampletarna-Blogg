@@ -16,7 +16,6 @@ h1 {
 
 body {
     display: flex;
-    border-radius: 10px;
     flex-direction: column;
     min-height: 100vh;
     background-color: #f6f3ea;
@@ -249,14 +248,11 @@ details>p {
     }
 
     nav {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
     }
 
     nav>a:nth-child(1) {
-        text-align: center;
-        flex-basis: 100%;
-        /* loggan tar hela övre raden, övriga länkar hamnar under */
+        margin-right: 0;
     }
 }
 
@@ -264,6 +260,7 @@ details>p {
 @media (min-width: 900px) {
     body {
         margin: 2em auto;
+        border-radius: 10px;
     }
 
     nav {
