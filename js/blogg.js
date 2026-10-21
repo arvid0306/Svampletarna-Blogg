@@ -22,8 +22,8 @@ function initBlog() {
             }
             const newBlogPost = {
                 titel: titel,
-                user: userLoggedInBlog,
                 content: content,
+                user: userLoggedInBlog,
                 date: date,
                 comments: [],
                 id: id
@@ -45,8 +45,8 @@ function createBlogPost(blogPost) {
     blogEl.classList.remove("hidden-post-template");
     let children = blogEl.children[0].children;
     children[0].textContent = blogPost.titel;
-    children[1].textContent = blogPost.user;
-    children[2].textContent = blogPost.content;
+    children[1].textContent = blogPost.content;
+    children[2].textContent = blogPost.user;
     children[3].textContent = blogPost.date;
     blogEl.dataset.id = blogPost.id;
     document.getElementById("blog-form").reset();
@@ -81,8 +81,8 @@ function createBlogPost(blogPost) {
         }
         const newBlogComment = {
             comment: content,
-            date: date,
-            user: userLoggedInBlog
+            user: userLoggedInBlog,
+            date: date
         };
         blogPost.comments.push(newBlogComment);
         localStorage.setItem("blogPosts", JSON.stringify(blogPostHistory));
@@ -96,8 +96,8 @@ function createBlogComment(blogComment, commentList, commentTemplateEl) {
     commentEl.classList.remove("hidden-post-template");
     let children = commentEl.children[0].children;
     children[0].textContent = blogComment.comment;
-    children[1].textContent = blogComment.date;
-    children[2].textContent = blogComment.user;
+    children[1].textContent = blogComment.user;
+    children[2].textContent = blogComment.date;
     commentList.prepend(commentEl);
 }
 window.onload = initBlog;
