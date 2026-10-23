@@ -24,9 +24,18 @@ h3{
     padding: 10px 3%;
 }
 
+#newPost h2{
+    margin-bottom: 20px;
+}
+
 #blog-form{
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#blog-form :nth-child(2){
+    margin-bottom: 15px;
 }
 
 #blog-form textarea{
@@ -34,6 +43,7 @@ h3{
     max-height: 15rem;
     resize: none;
     font-size: 1rem;
+    border-radius: 8px;
 }
 
 #blog-form #post-caption{
@@ -42,7 +52,17 @@ h3{
 }
 
 #blog-form #post-content{
-    min-height: 4rem;
+    min-height: 6rem;
+}
+
+#blog-form button{
+    margin-top: 20px;
+    width: 25%;
+    height: 50px;
+    align-self: flex-end;
+    border-radius: 16px;
+    color: white;
+    background-color: #2f5d34;
 }
 
 #log-in-link{
@@ -60,7 +80,79 @@ h3{
 #post-ul li{
     padding: 16px;
 }
+
+.post-background{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
 #post-ul p{
     color: black;
     font-style: normal;
+    margin-top: 10px;
+}
+
+.post-background h4{
+    margin-top: 10px;
+}
+
+.comments{
+    font-size: 1.25rem;
+}
+
+#post-ul article > p:nth-of-type(2),
+#comment-ul article > p:nth-of-type(3){
+    color: grey;
+}
+
+#comment-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.post-comment{
+    field-sizing: content;
+    min-height: 2rem;
+    max-height: 15rem;
+    resize: none;
+    font-size: 1rem;
+    border-radius: 8px;
+
+}
+
+#comment-publish{
+    margin-top: 20px;
+    width: 25%;
+    align-self: flex-end;
+    border-radius: 16px;
+    color: white;
+    background-color: #2f5d34;
+    overflow-wrap: anywhere;
+}
+
+#comment-ul li{
+    display: flex;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#comment-ul article{
+    width: 100%;
+}
+
+#comment-ul article > p:nth-of-type(2){
+    color: black;
+}
+
+#post-ul h4,
+#post-ul article > p:nth-of-type(2),
+#comment-ul article > p:nth-of-type(2),
+#comment-ul article > p:nth-of-type(3){
+    align-self: flex-end;
+}
+
+@media (min-width: 600px){
+
 }

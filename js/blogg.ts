@@ -75,7 +75,7 @@ function createBlogPost(blogPost: BlogPost){
     blogEl.removeAttribute("id");
     blogEl.classList.remove("hidden-post-template");
 
-    let children = blogEl.children[0].children;
+    let children = blogEl.children[0].children[0].children;
 
     children[0].textContent = blogPost.titel;
     children[1].textContent = blogPost.content;

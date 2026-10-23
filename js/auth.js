@@ -11,7 +11,9 @@ if(userLoggedIn === "Kalle"){
     })
 
     const logInMessage = document.getElementById("log-in-message");
-    logInMessage.classList.add("hidden");
+    if(logInMessage !== null){
+        logInMessage.classList.add("hidden");
+    }
 }
 
 logInOutBtn.addEventListener("click", e =>{
