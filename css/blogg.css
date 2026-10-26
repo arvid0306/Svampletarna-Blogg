@@ -2,62 +2,64 @@
     --hero-bild: url("../img/blogg-bakgrund.jpg");
 }
 
-li{
-    list-style-type: none ;
+li {
+    list-style-type: none;
 }
 
-.hidden-post-template{
+.hidden-post-template {
     display: none !important;
 }
 
-h3{
+h3 {
     font-size: 1.5rem;
 }
 
-#log-in-message{
+#log-in-message {
     display: flex;
     justify-content: space-between;
-    margin: 0 5% 20px;
-}
-
-#newPost{
-    padding: 10px 3%;
-}
-
-#newPost h2{
     margin-bottom: 20px;
 }
 
-#blog-form{
+#newPost {
+    padding: 10px 3%;
+}
+
+#newPost h2 {
+    margin-bottom: 20px;
+}
+
+#blog-form {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-#blog-form :nth-child(2){
+#blog-form :nth-child(2) {
     margin-bottom: 15px;
 }
 
-#blog-form textarea{
+#blog-form textarea {
     field-sizing: content;
     max-height: 15rem;
     resize: none;
     font-size: 1rem;
     border-radius: 8px;
+    padding: 5px;
 }
 
-#blog-form #post-caption{
+#blog-form #post-caption {
     width: 50%;
     min-height: 2rem;
 }
 
-#blog-form #post-content{
+#blog-form #post-content {
     min-height: 6rem;
 }
 
-#blog-form button{
+#blog-form button {
     margin-top: 20px;
-    width: 25%;
+    width: 50%;
+    max-width: 200px;
     height: 50px;
     align-self: flex-end;
     border-radius: 16px;
@@ -65,65 +67,76 @@ h3{
     background-color: #2f5d34;
 }
 
-#log-in-link{
-    display: block;
+#log-in-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 125px;
     border-radius: 8px;
     border: 2px solid #dddbd3;
     text-decoration: none;
     color: black;
     text-align: center;
     padding: 16px 5%;
+    margin-left: 10px;
     background-color: white;
-    align-self: center;
 }
 
-#post-ul li{
-    padding: 16px;
+#post-ul>li {
+    padding: 25px;
 }
 
-.post-background{
+.post-background {
     background-color: white;
+    margin: 0;
     padding: 20px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
-#post-ul p{
+#post-ul p {
     color: black;
     font-style: normal;
     margin-top: 10px;
 }
 
-.post-background h4{
+.post-background h4 {
     margin-top: 10px;
 }
 
-.comments{
+.comments {
     font-size: 1.25rem;
+    margin-top: 16px;
 }
 
-#post-ul article > p:nth-of-type(2),
-#comment-ul article > p:nth-of-type(3){
+#post-ul article>div>p:nth-of-type(2),
+#comment-ul article>div>p:nth-of-type(3) {
     color: grey;
 }
 
-#comment-form{
+#comment-form {
     display: flex;
     flex-direction: column;
 }
 
-.post-comment{
+.post-comment {
     field-sizing: content;
     min-height: 2rem;
     max-height: 15rem;
     resize: none;
     font-size: 1rem;
     border-radius: 8px;
-
+    padding: 5px;
+    margin: 0 16px;
 }
 
-#comment-publish{
+#comment-publish {
     margin-top: 20px;
-    width: 25%;
+    width: 50%;
+    max-width: 200px;
+    height: 50px;
     align-self: flex-end;
     border-radius: 16px;
     color: white;
@@ -131,28 +144,47 @@ h3{
     overflow-wrap: anywhere;
 }
 
-#comment-ul li{
+#comment-ul>li {
     display: flex;
-    border: 1px solid grey;
-    border-radius: 5px;
     margin-bottom: 20px;
+    margin: 0;
+    padding: 0 16px;
 }
 
-#comment-ul article{
+#comment-ul article {
     width: 100%;
 }
 
-#comment-ul article > p:nth-of-type(2){
+.comment-background {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Gör så att även tomma rader skrivs ut*/
+#post-ul article>div>p:nth-of-type(1),
+#comment-ul article>div>p:nth-of-type(1){
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#comment-ul article>div>p:nth-of-type(2) {
     color: black;
+    font-weight: 900;
 }
 
 #post-ul h4,
-#post-ul article > p:nth-of-type(2),
-#comment-ul article > p:nth-of-type(2),
-#comment-ul article > p:nth-of-type(3){
+#post-ul article>div>p:nth-of-type(2),
+#comment-ul article>div>p:nth-of-type(2),
+#comment-ul article>div>p:nth-of-type(3) {
     align-self: flex-end;
 }
 
-@media (min-width: 600px){
-
+@media (min-width: 600px) {
+    #log-in-link {
+        max-width: 250px;
+    }
 }

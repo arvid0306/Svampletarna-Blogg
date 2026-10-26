@@ -51,6 +51,8 @@ main{
     background-color: #f6f3ea;
 }
 
-@media (min-width: 900px) {
-    
+@media (max-width: 600px) {
+    #inloggning-form{
+        margin: 0 10%;
+    }
 }

@@ -149,7 +149,7 @@ function createBlogComment(blogComment: BlogComment, commentList: HTMLUListEleme
     commentEl.removeAttribute("id");
     commentEl.classList.remove("hidden-post-template");
 
-    let children = commentEl.children[0].children;
+    let children = commentEl.children[0].children[0].children;
 
     children[0].textContent = blogComment.comment;
     children[1].textContent = blogComment.user;

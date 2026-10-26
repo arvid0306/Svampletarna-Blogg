@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogg</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/blogg.css">
     <script src="js/auth.js" defer></script>
     <script src="js/blogg.js" defer></script>
-    <title>Blogg</title>
 </head>
 
 <body>
@@ -77,6 +77,19 @@
                             <p>20/10-2026</p>
                         </div>
                         <h3 class="comments">Kommentarer</h3>
+                        <div id="blog-post-comments">
+                            <ul id="comment-ul">
+                                <li id="placeholder-comments" class="hidden-post-template">
+                                    <article>
+                                        <div class="comment-background">
+                                            <p>Comment</p>
+                                            <p>User</p>
+                                            <p>20/10-2026</p>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
                         <div id="blog-post-publish-comment" class="hidden">
                             <form id="comment-form">
                                 <label for="post-comment"></label>
@@ -84,18 +97,6 @@
                                     rows="1"></textarea>
                                 <button type="submit" id="comment-publish">Publicera kommentar</button>
                             </form>
-                        </div>
-                        <div id="blog-post-comments">
-                            <ul id="comment-ul">
-                                <li id="placeholder-comments" class="hidden-post-template">
-                                    <article>
-                                        <p>Comment</p>
-                                        <p>User</p>
-                                        <p>20/10-2026</p>
-                                    </article>
-                                </li>
-                            </ul>
-
                         </div>
                     </article>
                 </li>

@@ -94,7 +94,7 @@ function createBlogComment(blogComment, commentList, commentTemplateEl) {
     const commentEl = commentTemplateEl.cloneNode(true);
     commentEl.removeAttribute("id");
     commentEl.classList.remove("hidden-post-template");
-    let children = commentEl.children[0].children;
+    let children = commentEl.children[0].children[0].children;
     children[0].textContent = blogComment.comment;
     children[1].textContent = blogComment.user;
     children[2].textContent = blogComment.date;
