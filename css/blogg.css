@@ -14,16 +14,19 @@ li {
 h3 {
     font-size: 1.5rem;
 }
-/*Skjuter texten och länken till varsin sida av main*/
+/*Skapar en flex och lägger innehållet centrerat i en "fallande lista"*/
 #log-in-message {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 20px;
 }
 /*Ändrar typografi på infotexten om att man måste måste logga in för att publicera inlägg*/
 .log-in-message-text {
     font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
 }
 /*Stylar länken för att logga in så den ser ut och är klickbar som en knapp men utan att behöva använda button i HTML*/
 #log-in-link {
@@ -71,7 +74,7 @@ h3 {
 /*Ändrar storlek och marginal nedåt för rutan där användaren fyller i rubrik*/
 #post-caption {
     margin-bottom: 15px;
-    width: 50%;
+    width: 100%;
     min-height: 2rem;
 }
 /*Ändrar minsta höjd för rutan där användaren fyller i brödtexten*/
@@ -178,8 +181,19 @@ h3 {
 }
 
 @media (min-width: 600px) {
+    /*Ändrar från kolumn till rad för flex och skjuter ut innehållet till varsin sida*/
+    #log-in-message {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     /*Ökar maxbredden på logga in-länken*/
     #log-in-link {
         max-width: 250px;
+        justify-content: space-between;
+        margin-left: 0;
+    }
+    /*Ändrar bredden på rubrikfältet i inläggsformuläret*/
+    #post-caption{
+        width: 50%;
     }
 }

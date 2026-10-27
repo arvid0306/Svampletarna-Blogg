@@ -7,7 +7,7 @@ main{
 }
 /*Sätter marginal för sidorna och gap för innehållet. Skapar också en flex och centrerar innehållet horisontellt samt sätter en suddig bakgrund med indrag för innehållet*/
 #inloggning-form{
-    margin: 0 20%;                                  
+    margin: 0 0;                                  
     gap: 1rem;                                          
     display: flex;
     flex-direction: column;
@@ -57,9 +57,9 @@ main{
     background-color: lightgrey;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
     /*Ändrar marginalen till höger och vänster på inloggningsformuläret när skärmen är mindre än 600px*/
     #inloggning-form{
-        margin: 0 10%;
+        margin: 0 20%;
     }
 }
