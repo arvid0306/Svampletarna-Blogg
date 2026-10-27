@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogg</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/blogg.css">
-    <script src="js/auth.js" defer></script>
-    <script src="js/blogg.js" defer></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/blogg.css">
+    <script src="./js/auth.js" defer></script>
+    <script src="./js/blogg.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html">
-                <img class="logo" src="img/svampletarna-logo.png" alt="Svampletarna logotype">
+            <a href="./index.html">
+                <img class="logo" src="./img/svampletarna-logo.png" alt="Svampletarna logotype">
             </a>
-            <a href="index.html">Alla svampar</a>
-            <a href="mina-fynd.html">Mina fynd</a>
-            <a href="om-svampar.html">Om svampar</a>
-            <a href="blogg.html" aria-current="page">Blogg</a>
-            <a href="login.html" id="log-in-log-out-btn">Logga in</a>
+            <a href="./index.html">Alla svampar</a>
+            <a href="./mina-fynd.html">Mina fynd</a>
+            <a href="./om-svampar.html">Om svampar</a>
+            <a href="./blogg.html" aria-current="page">Blogg</a>
+            <a href="./login.html" id="log-in-log-out-btn">Logga in</a>
         </nav>
 
         <div class="hero">
@@ -34,6 +34,7 @@
     <main>
         <div id="newPost" class="hidden">
             <h2>Skapa nytt inlägg</h2>
+            <!--formulär för blogginlägg-->
             <form id="blog-form">
                 <label for="post-caption">Rubrik</label>
                 <textarea name="post-caption" id="post-caption" rows="1" required></textarea>
@@ -42,15 +43,17 @@
                 <button type="submit">Publicera inlägg</button>
             </form>
         </div>
+        <!--information som visas om användaren inte är inloggad-->
         <div id="log-in-message">
             <p class="log-in-message-text">Logga in för att publicera inlägg och kommentera</p>
-            <a href="login.html" id="log-in-link">Logga in</a>
+            <a href="./login.html" id="log-in-link">Logga in</a>
         </div>
         <section id="blog-posts">
             <h2>Blogginlägg</h2>
             <ul id="post-ul">
                 <li id="placeholder-posts" class="hidden-post-template">
                     <article>
+                        <!--placeholder blogginlägg-->
                         <div class="post-background">
                             <h3>Titel</h3>
                             <p class="content">Content</p>
@@ -62,6 +65,7 @@
                             <ul class="comment-ul">
                                 <li class="placeholder-comments hidden-post-template">
                                     <article>
+                                        <!--placeholder kommentar-->
                                         <div class="comment-background">
                                             <p class="content">Comment</p>
                                             <p class="author">User</p>
@@ -72,6 +76,7 @@
                             </ul>
                         </div>
                         <div class="blog-post-publish-comment hidden">
+                            <!--formulär för kommentarer-->
                             <form class="comment-form">
                                 <label>
                                     Kommentar:
