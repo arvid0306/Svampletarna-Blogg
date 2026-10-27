@@ -2,6 +2,7 @@ main{
     background-image: url(../img/login-bakgrund.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #inloggning-form{
