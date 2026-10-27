@@ -65,7 +65,7 @@ function initBlog(){
     
 
 }
-//Funktionen skapar ett nytt blogginlägg genom att skapa en kopia av mallen i HTML, ta bort "mall-id" och klassen som döljer mallen, och sedan fylla i med informationen som funktionen har anropats med. Efter det töms blogginläggsformuläret så att användaren lätt kan skriva ett nytt inlägg.
+//Funktionen skapar ett nytt blogginlägg genom att skapa en kopia av mallen i HTML och sedan fylla i med informationen som funktionen har anropats med. Efter det töms blogginläggsformuläret så att användaren lätt kan skriva ett nytt inlägg.
 //Sedan kopplas formuläret för kommentar till en konstant och även inputen textarea till en annan konstant. Dessa görs en kontroll på så att de inte ger tillbaka null och isåfall så avbryts resten av funktionen.
 //Efter det kopplas kommentarsmallen till en konstant och en annan konstant kopplas till listan där kommentarerna kommer hamna. Även dessa kontrolleras så de inte ger tillbaka null.
 //Därefter gör en forEach-loop där funktionen createBlogComment anropas för varje kommentar som finns sparat i arrayen för blogkommentarer. Anropet skickas med informationen om det aktuella sparade kommentaren i just det varvet av loopen samt mallen för kommentarer och listan för där kommentaren ska hamna.
@@ -164,8 +164,8 @@ function createBlogPost(blogPost: BlogPost){
             createBlogComment(newBlogComment, commentList, commentTemplateContent);
         })
 }
-//Funktionen createBlogComment skapar en kommentar genom att först göra en kopia av mallen för kommentarer, 
-//sedan tas klasserna bort som följde med från mallen. Därefter fylls kopian med informationen som funktionen anropades med
+//Funktionen createBlogComment skapar en kommentar genom att först göra en kopia av mallen för kommentarer. 
+//Därefter fylls kopian med informationen som funktionen anropades med
 //och till sist så läggs det nya li-elementet (kommentaren) till längst upp i listan för kommentarer på just det aktuella inlägget.
 function createBlogComment(blogComment: BlogComment, commentList: HTMLUListElement, commentTemplateEl: HTMLLIElement){
 

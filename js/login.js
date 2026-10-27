@@ -52,19 +52,14 @@ window.onload = init;
 // Finns de registrerade så aktiveras funktionen LogInFunction
 // Finns de inte registrerade så skickas en sträng till p-taggen för meddelande med texten "Felaktiga inloggningsuppgifter"
 function logInCheck(){
-    if(user.value === userKalle){
-        if(pwd.value === pwdKalle){            
-            return logInFunction();
-        }
-        else{
-            infoForm.textContent = `Felaktiga inloggningsuppgifter`;
-
-            return;
-        }
+    if(user.value === userKalle && pwd.value === pwdKalle){          
+        return logInFunction();
     }
-    else{
+     else{
         infoForm.textContent = `Felaktiga inloggningsuppgifter`;
-
+        
+        pwd.value = "";
+        
         return;
     }
 }
