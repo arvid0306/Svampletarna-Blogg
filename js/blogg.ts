@@ -75,17 +75,23 @@ function initBlog(){
 //Därefter skapas ett objekt innehållande all info till kommentaren, sedan läggs kommentaren till i arrayen för comments och sparar om hela blogPostHistory i localstorage och till slut anropas funktionen createBlogComment med objektet för kommentaren, listan för kommentarer och mallen för kommentaren.
 function createBlogPost(blogPost: BlogPost){
     const postList = document.getElementById("post-ul");
+    const template = document.getElementById("post-template") as HTMLTemplateElement | null;
 
-    const templateEl = document.getElementById("placeholder-posts");
-    if(postList === null || templateEl === null){
-
+    if(postList === null || template === null){
         return;
     }
 
-    const blogEl = templateEl.cloneNode(true) as HTMLLIElement;
+    const templateContent = template.content.firstElementChild;
+    if(templateContent === null){
+        return;
+    }
 
-    blogEl.removeAttribute("id");
-    blogEl.classList.remove("hidden-post-template");
+    const blogEl = templateContent.cloneNode(true) as HTMLLIElement;
+
+    const publishCommentElement = blogEl.querySelector<HTMLElement>(".blog-post-publish-comment");
+    if(userLoggedInBlog !== null){
+        publishCommentElement?.classList.remove("hidden");
+    }
 
     let children = blogEl.children[0].children[0].children;
 
@@ -113,14 +119,19 @@ function createBlogPost(blogPost: BlogPost){
     }
 
     const commentList = blogEl.querySelector<HTMLUListElement>(".comment-ul");
-    const commentTemplateEl = blogEl.querySelector<HTMLLIElement>(".placeholder-comments");
+    const commentTemplate = blogEl.querySelector(".comment-template") as HTMLTemplateElement | null;
 
-    if(commentList === null || commentTemplateEl === null){
+    if(commentList === null || commentTemplate === null){
+        return;
+    }
+
+    const commentTemplateContent = (commentTemplate.content.firstElementChild) as HTMLLIElement | null;
+    if(commentTemplateContent === null){
         return;
     }
 
     blogPost.comments.forEach(blogComment =>{
-        createBlogComment(blogComment, commentList, commentTemplateEl);
+        createBlogComment(blogComment, commentList, commentTemplateContent);
     });
 
     if(userLoggedInBlog === null){
@@ -150,7 +161,7 @@ function createBlogPost(blogPost: BlogPost){
 
             formBlogComments.reset();
 
-            createBlogComment(newBlogComment, commentList, commentTemplateEl);
+            createBlogComment(newBlogComment, commentList, commentTemplateContent);
         })
 }
 //Funktionen createBlogComment skapar en kommentar genom att först göra en kopia av mallen för kommentarer, 
@@ -159,11 +170,6 @@ function createBlogPost(blogPost: BlogPost){
 function createBlogComment(blogComment: BlogComment, commentList: HTMLUListElement, commentTemplateEl: HTMLLIElement){
 
     const commentEl = commentTemplateEl.cloneNode(true) as HTMLLIElement;
-
-    commentEl.classList.remove(
-        "placeholder-comments",
-        "hidden-post-template"
-    );
 
     let children = commentEl.children[0].children[0].children;
 

@@ -14,16 +14,19 @@
 <body>
     <header>
         <nav>
-            <a href="./index.html">
-                <img class="logo" src="./img/svampletarna-logo.png" alt="Svampletarna logotype">
-            </a>
-            <a href="./index.html">Alla svampar</a>
-            <a href="./mina-fynd.html">Mina fynd</a>
-            <a href="./om-svampar.html">Om svampar</a>
-            <a href="./blogg.html" aria-current="page">Blogg</a>
-            <a href="./login.html" id="log-in-log-out-btn">Logga in</a>
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <img class="logo" src="./img/svampletarna-logo.png" alt="Svampletarna logotype">
+                    </a>
+                </li>
+                <li><a href="./index.html">Alla svampar</a></li>
+                <li><a href="./mina-fynd.html">Mina fynd</a></li>
+                <li><a href="./om-svampar.html">Om svampar</a></li>
+                <li><a href="./blogg.html" aria-current="page">Blogg</a></li>
+                <li><a href="./login.html" id="log-in-log-out-btn">Logga in</a></li>
+            </ul>
         </nav>
-
         <div class="hero">
             <h1>Blogg</h1>
             <p>
@@ -51,42 +54,46 @@
         <section id="blog-posts">
             <h2>Blogginlägg</h2>
             <ul id="post-ul">
-                <li id="placeholder-posts" class="hidden-post-template">
-                    <article>
-                        <!--placeholder blogginlägg-->
-                        <div class="post-background">
-                            <h3>Titel</h3>
-                            <p class="content">Content</p>
-                            <p class="author">User</p>
-                            <p class="date">20/10-2026</p>
-                        </div>
-                        <h4 class="comments">Kommentarer</h4>
-                        <div class="blog-post-comments">
-                            <ul class="comment-ul">
-                                <li class="placeholder-comments hidden-post-template">
-                                    <article>
-                                        <!--placeholder kommentar-->
-                                        <div class="comment-background">
-                                            <p class="content">Comment</p>
-                                            <p class="author">User</p>
-                                            <p class="date">20/10-2026</p>
-                                        </div>
-                                    </article>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="blog-post-publish-comment hidden">
-                            <!--formulär för kommentarer-->
-                            <form class="comment-form">
-                                <label>
-                                    Kommentar:
-                                    <textarea name="post-comment" class="post-comment" rows="1" required></textarea>
-                                </label>                                
-                                <button type="submit" class="comment-publish">Publicera kommentar</button>
-                            </form>
-                        </div>
-                    </article>
-                </li>
+                <template id="post-template">
+                    <li>
+                        <article>
+                            <!--placeholder blogginlägg-->
+                            <div class="post-background">
+                                <h3>Titel</h3>
+                                <p class="content">Content</p>
+                                <p class="author">User</p>
+                                <p class="date">20/10-2026</p>
+                            </div>
+                            <h4 class="comments">Kommentarer</h4>
+                            <div class="blog-post-comments">
+                                <ul class="comment-ul">
+                                    <template class="comment-template">
+                                        <li>
+                                            <article>
+                                                <!--placeholder kommentar-->
+                                                <div class="comment-background">
+                                                    <p class="content">Comment</p>
+                                                    <p class="author">User</p>
+                                                    <p class="date">20/10-2026</p>
+                                                </div>
+                                            </article>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            <div class="blog-post-publish-comment hidden">
+                                <!--formulär för kommentarer-->
+                                <form class="comment-form">
+                                    <label>
+                                        Kommentar:
+                                        <textarea name="post-comment" class="post-comment" rows="1" required></textarea>
+                                    </label>
+                                    <button type="submit" class="comment-publish">Publicera kommentar</button>
+                                </form>
+                            </div>
+                        </article>
+                    </li>
+                </template>
             </ul>
         </section>
     </main>
