@@ -1,11 +1,13 @@
+/*Lägger till en bakgrundsbild för main och hindrar den från att upprepa sig och istället fyller ut ytan centrerat*/
 main{
     background-image: url(../img/login-bakgrund.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
-
+/*Sätter marginal för sidorna och gap för innehållet. Skapar också en flex och centrerar innehållet horisontellt samt sätter en suddig bakgrund med indrag för innehållet*/
 #inloggning-form{
-    margin: 0 20%;                                  
+    margin: 0 0;                                  
     gap: 1rem;                                          
     display: flex;
     flex-direction: column;
@@ -18,14 +20,14 @@ main{
     border-radius: 16px;
     padding: 5%;                                        
 }
-
+/*Skapar en grid för varje div-tagg med klassen och centrerar innehållet i griden*/
 .input-row{
     display: grid;
     grid-template-columns: 30px 1fr;
     align-items: center;
     width: 75%;
 }
-
+/*Sätter storleken samt bakgrundsfärg och kantrudning för bilderna som syns bredvid inputs för namn och lösenord*/
 .input-row img{
     width: 30px;
     height: 30px;
@@ -33,7 +35,7 @@ main{
     border-radius: 8px 0 0 8px;
     border: none;
 }
-
+/*Sätter storlek och kantrundning för inputs för namn och lösenord samt sätter indrag så att texten som skrivs i inputen har lite luft mellan sig och kanterna*/
 .input-row input{
     height: 30px;
     width: 100%;
@@ -41,7 +43,7 @@ main{
     border: none;
     padding: 0 5%;
 }
-
+/*Ändrar storlek och färg för inloggningsknappen*/
 #btn-log-in{
     width: 75%;
     height: 40px;
@@ -50,7 +52,14 @@ main{
     border: none;
     background-color: #f6f3ea;
 }
+/*Gör så att inloggningsknappen blir ljusgrå när man för musen över den*/
+#btn-log-in:hover{
+    background-color: lightgrey;
+}
 
-@media (min-width: 900px) {
-    
+@media (min-width: 600px) {
+    /*Ändrar marginalen till höger och vänster på inloggningsformuläret när skärmen är mindre än 600px*/
+    #inloggning-form{
+        margin: 0 20%;
+    }
 }

@@ -4,26 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/login.css"> <!--Kopplar ihop html med css-->
-    <script src="js/login.js" defer></script> <!--Kopplar ihop html med javascriptet och läser in javascriptet efter all html-kod är inläst-->
+    <title>Logga in</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/login.css"> <!--Kopplar ihop html med css-->
+    <script src="./js/login.js" defer></script>
+    <!--Kopplar ihop html med javascriptet och läser in javascriptet efter all html-kod är inläst-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Förebereder länkandet till fonten-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Förebereder länkandet till fonten-->
-    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet"> <!--Länkar till fonten som används-->
-    <title>Logga in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+    <!--Länkar till fonten som används-->
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html">
-                <img class="logo" src="img/svampletarna-logo.png" alt="Svampletarna logotype">
-            </a>
-            <a href="index.html">Alla svampar</a>
-            <a href="mina-fynd.html">Mina fynd</a>
-            <a href="om-svampar.html">Om svampar</a>
-            <a href="blogg.html">Blogg</a>
-            <a href="login.html" id="log-in-log-out-btn" aria-current="page">Logga in</a>
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <img class="logo" src="./img/svampletarna-logo.png" alt="Svampletarna logotype">
+                    </a>
+                </li>
+                <li><a href="./index.html">Alla svampar</a></li>
+                <li><a href="./mina-fynd.html">Mina fynd</a></li>
+                <li><a href="./om-svampar.html">Om svampar</a></li>
+                <li><a href="./blogg.html">Blogg</a></li>
+                <li><a href="./login.html" id="log-in-log-out-btn" aria-current="page">Logga in</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -32,14 +38,15 @@
             <form id="inloggning-form"> <!--Formuläret för inloggningen-->
                 <label for="user">Namn:</label> <!--Beskrivande text för vad som ska fyllas i nedanför i input-->
                 <div class="input-row">
-                    <img src="img/losenord-ikon.png" alt="" aria-hidden="true">
-                    <input type="text" name="user" id="user"> <!--Input där användaren fyller i namn-->
+                    <img src="./img/anvandare-ikon.png" alt="" aria-hidden="true">
+                    <input type="text" name="user" id="user" required> <!--Input där användaren fyller i namn-->
                 </div>
                 <label for="pwd">Lösenord:</label> <!--Beskrivande text för vad som ska fyllas i nedanför i input-->
                 <div class="input-row">
-                    <img src="img/anvandare-ikon.png" alt="" aria-hidden="true">
-                    <input type="password" name="pwd" id="pwd"> <!--Input där användaren fyller i lösenordet-->
+                    <img src="./img/losenord-ikon.png" alt="" aria-hidden="true">
+                    <input type="password" name="pwd" id="pwd" required> <!--Input där användaren fyller i lösenordet-->
                 </div>
+                <p id="info-log-in-form"></p>
                 <input type="submit" value="Logga in" id="btn-log-in"> <!--Knappen för att logga in-->
             </form>
         </div>

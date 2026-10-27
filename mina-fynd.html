@@ -2,27 +2,31 @@
 <html lang="sv">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mina fynd</title>
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/mina-fynd.css" />
-    <script src="js/script.js" defer></script>
-    <script src="js/mina-fynd.js" defer></script>
-    <script src="js/auth.js" defer></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/mina-fynd.css">
+    <script src="./js/script.js" defer></script>
+    <script src="./js/mina-fynd.js" defer></script>
+    <script src="./js/auth.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html">
-                <img class="logo" src="img/svampletarna-logo.png" alt="Svampletarna logotyp" />
-            </a>
-            <a href="index.html">Alla svampar</a>
-            <a href="mina-fynd.html" aria-current="page">Mina fynd</a>
-            <a href="om-svampar.html">Om svampar</a>
-            <a href="blogg.html">Blogg</a>
-            <a href="login.html" id="log-in-log-out-btn">Logga in</a>
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <img class="logo" src="./img/svampletarna-logo.png" alt="Svampletarna logotype">
+                    </a>
+                </li>
+                <li><a href="./index.html">Alla svampar</a></li>
+                <li><a href="./mina-fynd.html" aria-current="page">Mina fynd</a></li>
+                <li><a href="./om-svampar.html">Om svampar</a></li>
+                <li><a href="./blogg.html">Blogg</a></li>
+                <li><a href="./login.html" id="log-in-log-out-btn">Logga in</a></li>
+            </ul>
         </nav>
 
         <div class="hero">
@@ -38,22 +42,25 @@
             <button type="button" id="clear-history-btn">Rensa alla fynd</button>
         </div>
         <section class="svamp-lista">
+            <h2>Svamplista</h2>
             <ul>
-                <li id="placeholder">
-                    <article>
-                        <!-- placeholder svamp-->
-                        <img />
-                        <h3>Exempelnamn svenska</h3>
-                        <p>Exempelnamn latin</p>
-                        <details>
-                            <summary>Ätlig</summary>
-                            <p>Ätbarhet</p>
-                        </details>
-                        <p>Beskrivning</p>
-                        <p class="location">Fyndplats</p>
-                        <button type="button" class="remove-mushroom-btn">Ta bort</button>
-                    </article>
-                </li>
+                <template>
+                    <li>
+                        <article>
+                            <!-- placeholder svamp-->
+                            <img src="./img/exempelsvamp.jpg" alt="Exempelsvamp">
+                            <h3>Exempelnamn svenska</h3>
+                            <p>Exempelnamn latin</p>
+                            <details>
+                                <summary>Ätlig</summary>
+                                <p>Ätbarhet</p>
+                            </details>
+                            <p>Beskrivning</p>
+                            <p class="location">Fyndplats</p>
+                            <button type="button" class="remove-mushroom-btn">Ta bort</button>
+                        </article>
+                    </li>
+                </template>
             </ul>
         </section>
     </main>

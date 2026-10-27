@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/blogg.css">
-    <script src="js/auth.js" defer></script>
-    <script src="js/blogg.js" defer></script>
     <title>Blogg</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/blogg.css">
+    <script src="./js/auth.js" defer></script>
+    <script src="./js/blogg.js" defer></script>
 </head>
+
 <body>
     <header>
         <nav>
-            <a href="index.html">
-                <img class="logo" src="img/svampletarna-logo.png" alt="Svampletarna logotype">
-            </a>
-            <a href="index.html">Alla svampar</a>
-            <a href="mina-fynd.html">Mina fynd</a>
-            <a href="om-svampar.html">Om svampar</a>
-            <a href="blogg.html" aria-current="page">Blogg</a>
-            <a href="login.html" id="log-in-log-out-btn">Logga in</a>
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <img class="logo" src="./img/svampletarna-logo.png" alt="Svampletarna logotype">
+                    </a>
+                </li>
+                <li><a href="./index.html">Alla svampar</a></li>
+                <li><a href="./mina-fynd.html">Mina fynd</a></li>
+                <li><a href="./om-svampar.html">Om svampar</a></li>
+                <li><a href="./blogg.html" aria-current="page">Blogg</a></li>
+                <li><a href="./login.html" id="log-in-log-out-btn">Logga in</a></li>
+            </ul>
         </nav>
-
         <div class="hero">
             <h1>Blogg</h1>
             <p>
@@ -32,47 +37,63 @@
     <main>
         <div id="newPost" class="hidden">
             <h2>Skapa nytt inlägg</h2>
+            <!--formulär för blogginlägg-->
             <form id="blog-form">
                 <label for="post-caption">Rubrik</label>
-                <textarea name="post-caption" id="post-caption" rows="1"></textarea>
+                <textarea name="post-caption" id="post-caption" rows="1" required></textarea>
                 <label for="post-content">Text</label>
-                <textarea name="post-content" id="post-content" rows="1"></textarea>
+                <textarea name="post-content" id="post-content" rows="1" required></textarea>
                 <button type="submit">Publicera inlägg</button>
             </form>
         </div>
+        <!--information som visas om användaren inte är inloggad-->
         <div id="log-in-message">
-            <h3>Logga in för att publicera inlägg och kommentera</h3>
-            <a href="login.html" id="log-in-link">Logga in</a>
+            <p class="log-in-message-text">Logga in för att publicera inlägg och kommentera</p>
+            <a href="./login.html" id="log-in-link">Logga in</a>
         </div>
         <section id="blog-posts">
+            <h2>Blogginlägg</h2>
             <ul id="post-ul">
-                <li id="placeholder-posts" class="hidden-post-template">
-                    <article>
-                        <h3>Titel</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu arcu, finibus consectetur pharetra eu, consectetur eu lacus. Maecenas malesuada nisi et iaculis varius. Quisque ut rhoncus est, vitae suscipit mauris. Nunc justo justo, imperdiet tincidunt turpis quis, iaculis pulvinar diam. Duis euismod finibus ligula at porta. Proin eu leo sit amet nisi semper sollicitudin a at est. Proin sem ante, pulvinar sit amet laoreet at, scelerisque ut sapien. In hac habitasse platea dictumst. Sed auctor sem a lacus euismod condimentum. Donec eu leo neque. Quisque rhoncus sit amet enim ut varius. Integer placerat lorem sit amet lectus egestas, sit amet lobortis ligula dapibus. Vivamus fermentum velit in dolor bibendum pharetra. Sed eget consectetur dui. Integer nisi ligula, vehicula vel tempus eget, molestie eget arcu. Sed accumsan tristique pulvinar. Aenean dignissim vitae dolor nec ullamcorper. Nulla consequat dui quis est bibendum vehicula. Integer dui diam, porta eget finibus elementum, accumsan ac turpis. Integer dictum porta mi in lacinia. Phasellus hendrerit efficitur diam, id ultricies dolor egestas sed. Pellentesque bibendum laoreet sapien, nec convallis purus sodales ac. Nam pulvinar dui quis diam tempus euismod. Nullam tortor neque, pretium id dictum id, laoreet et lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras vestibulum ante et nibh consequat, venenatis ornare dolor vehicula. Maecenas non mauris fermentum, tempor lacus eget, laoreet lorem. Ut consequat condimentum mi, sit amet commodo lacus vestibulum eu. Praesent eget vestibulum libero. Donec et fermentum nulla. Mauris pulvinar ornare vehicula. Phasellus vel tellus et dui malesuada porta ac quis tellus.</p>
-                        <h4>User</h4>
-                        <p>20/10-2026</p>
-                        <div id="blog-post-publish-comment" class="hidden">
-                            <form id="comment-form">
-                                <label for="post-comment"></label>
-                                <textarea name="post-comment" id="post-comment" rows="1"></textarea>
-                                <button type="submit" id="comment-publish">Publicera kommentar</button>
-                            </form>
-                        </div>
-                        <div id="blog-post-comments">
-                            <ul id="comment-ul">
-                                <li id="placeholder-comments" class="hidden-post-template">
-                                    <article>
-                                        <p>Comment</p>
-                                        <p>User</p>
-                                        <p>20/10-2026</p>
-                                    </article>
-                                </li>
-                            </ul>
-                            
-                        </div>
-                    </article>
-                </li>
+                <template id="post-template">
+                    <li>
+                        <article>
+                            <!--placeholder blogginlägg-->
+                            <div class="post-background">
+                                <h3>Titel</h3>
+                                <p class="content">Content</p>
+                                <p class="author">User</p>
+                                <p class="date">20/10-2026</p>
+                            </div>
+                            <h4 class="comments">Kommentarer</h4>
+                            <div class="blog-post-comments">
+                                <ul class="comment-ul">
+                                    <template class="comment-template">
+                                        <li>
+                                            <article>
+                                                <!--placeholder kommentar-->
+                                                <div class="comment-background">
+                                                    <p class="content">Comment</p>
+                                                    <p class="author">User</p>
+                                                    <p class="date">20/10-2026</p>
+                                                </div>
+                                            </article>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            <div class="blog-post-publish-comment hidden">
+                                <!--formulär för kommentarer-->
+                                <form class="comment-form">
+                                    <label>
+                                        Kommentar:
+                                        <textarea name="post-comment" class="post-comment" rows="1" required></textarea>
+                                    </label>
+                                    <button type="submit" class="comment-publish">Publicera kommentar</button>
+                                </form>
+                            </div>
+                        </article>
+                    </li>
+                </template>
             </ul>
         </section>
     </main>
@@ -80,4 +101,5 @@
         Skapad av Arvid Johansson WU26
     </footer>
 </body>
+
 </html>

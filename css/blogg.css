@@ -1,66 +1,195 @@
+/*Lägger till rätt bakgrundsbild i hero-div*/
 .hero {
     --hero-bild: url("../img/blogg-bakgrund.jpg");
 }
-
-li{
-    list-style-type: none ;
+/*Tar bort punkterna från listan*/
+li {
+    list-style-type: none;
 }
-
-.hidden-post-template{
-    display: none !important;
-}
-
-h3{
+/*Ändrar textstorleken på titel i blogginlägget*/
+h3 {
     font-size: 1.5rem;
 }
-
-#log-in-message{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 5% 20px;
-}
-
-#newPost{
-    padding: 10px 3%;
-}
-
-#blog-form{
+/*Skapar en flex och lägger innehållet centrerat i en "fallande lista"*/
+#log-in-message {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 20px;
 }
-
-#blog-form textarea{
-    field-sizing: content;
-    max-height: 15rem;
-    resize: none;
-    font-size: 1rem;
+/*Ändrar typografi på infotexten om att man måste måste logga in för att publicera inlägg*/
+.log-in-message-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
 }
+/*Stylar länken för att logga in så den ser ut och är klickbar som en knapp men utan att behöva använda button i HTML*/
+#log-in-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-#blog-form #post-caption{
-    width: 50%;
-    min-height: 2rem;
-}
-
-#blog-form #post-content{
-    min-height: 4rem;
-}
-
-#log-in-link{
-    display: block;
+    max-width: 125px;
     border-radius: 8px;
     border: 2px solid #dddbd3;
     text-decoration: none;
     color: black;
     text-align: center;
     padding: 16px 5%;
+    margin-left: 10px;
     background-color: white;
-    align-self: center;
+}
+/*Gör bakgrunden ljusgrå när man för muspekaren över länken*/
+#log-in-link:hover{
+    background-color: lightgrey;
+}
+/*Lägger till padding på div-taggen som innehåller text och formulär för nytt inlägg*/
+#newPost {
+    padding: 10px 3%;
+}
+/*Lägger till marginal nedåt för texten "Skapa nytt inlägg"*/
+#newPost h2 {
+    margin-bottom: 20px;
+}
+/*Skapar flex för formuläret samt lägger till marginal nedåt*/
+#blog-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+/*Sätter max-storlek för textarean samt gör så att den ökar i storlek med innehållets storlek*/
+#blog-form textarea {
+    field-sizing: content;
+    max-height: 15rem;
+    resize: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 5px;
+}
+/*Ändrar storlek och marginal nedåt för rutan där användaren fyller i rubrik*/
+#post-caption {
+    margin-bottom: 15px;
+    width: 100%;
+    min-height: 2rem;
+}
+/*Ändrar minsta höjd för rutan där användaren fyller i brödtexten*/
+#post-content {
+    min-height: 6rem;
+}
+/*Ändrar utseende för publiceraknapparna (inlägg och kommentar)*/
+#blog-form button,
+.comment-publish {
+    margin-top: 20px;
+    width: 50%;
+    max-width: 200px;
+    min-height: 50px;
+    max-height: 60px;
+    align-self: flex-end;
+    border-radius: 16px;
+    color: white;
+    background-color: #2f5d34;
+    overflow-wrap: anywhere;
+}
+/*Gör publiceraknapparna mörkare när man för muspekaren över knapparna*/
+#blog-form button:hover,
+.comment-publish:hover {
+    background-color: #244728;
+}
+/*Lägger till marginal nedåt för texten "Blogginlägg" i sectionen för skapade blogginlägg*/
+#blog-posts > h2 {
+    margin-bottom: 16px;
+}
+/*Lägger till padding på samtliga inlägg*/
+#post-ul > li {
+    padding: 25px;
+}
+/*Gör div-taggarna vita med rundade kanter och indrag samt skapar en flex för innehållet*/
+.post-background,
+.comment-background {
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
-#post-ul li{
-    padding: 16px;
-}
-#post-ul p{
+/*Gör så att även tomma rader skrivs ut i innehålls-taggarna*/
+.content{
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
     color: black;
     font-style: normal;
+    margin-top: 10px;
+}
+/*Ändrar typografi för innehåll i både kommentarer och inlägg*/
+.author {
+    margin-top: 10px;
+    color: black;
+    font-weight: 900;
+}
+/*Ändrar typografi och marginal uppåt för texten "Kommentarer" som ligger precis under blogginlägget*/
+.comments {
+    font-size: 1.25rem;
+    margin-top: 16px;
+}
+/*Ändrar färgen på texten för datumen till grå*/
+.date {
+    color: grey;
+}
+/*Skapar flex för kommentarsformuläret*/
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+/*Skapar en flex och lägger till gap mellan innehållet i sin flex samt lägger till marginal till höger och vänster*/
+.comment-form label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0 16px;
+}
+/*Gör så att textarea för formuläret som skapar ny kommentar ökar med innehållets storlek*/
+.post-comment {
+    width: 100%;
+    field-sizing: content;
+    min-height: 2rem;
+    max-height: 15rem;
+    resize: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 5px;
+}
+/*Skapar en flex samt lägger till indrag till höger och vänster*/
+.comment-ul>li {
+    display: flex;
+    padding: 0 16px;
+}
+/*Sätter bredden till bredaste möjliga i sin kolumn*/
+.comment-ul article {
+    width: 100%;
+}
+/*Förflyttar författare och datum till höger i inlägget*/
+.author,
+.date {
+    align-self: flex-end;
+}
+
+@media (min-width: 600px) {
+    /*Ändrar från kolumn till rad för flex och skjuter ut innehållet till varsin sida*/
+    #log-in-message {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    /*Ökar maxbredden på logga in-länken*/
+    #log-in-link {
+        max-width: 250px;
+        justify-content: space-between;
+        margin-left: 0;
+    }
+    /*Ändrar bredden på rubrikfältet i inläggsformuläret*/
+    #post-caption{
+        width: 50%;
+    }
 }
