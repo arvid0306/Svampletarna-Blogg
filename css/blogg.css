@@ -6,10 +6,6 @@
 li {
     list-style-type: none;
 }
-/*Döljer innehållet på alla taggar med denna klass*/
-.hidden-post-template {
-    display: none !important;
-}
 /*Ändrar textstorleken på titel i blogginlägget*/
 h3 {
     font-size: 1.5rem;
