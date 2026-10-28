@@ -1,8 +1,6 @@
 const userKalle = "Kalle";
 const pwdKalle = "qwe123";
 
-const userLoggedIn = localStorage.getItem("user");
-
 // Refererar till inputen "user" i html-koden
 let user;
 
@@ -14,7 +12,6 @@ let infoForm;
 
 // Refererar de globala variablerna till rätt html-taggar
 // Lyssnar efter om inloggningsformuläret skickas och isåfall anropas funktionen logInCheck.
-// Kontrollerar också om det finns tidigare Namn lagrade i localstorage och isåfall startar funktionen logInFunction
 function init(){
     user = document.getElementById("user");
     pwd = document.getElementById("pwd");
